@@ -1,0 +1,11 @@
+si\fri\kp\KpRest\api\rest\KpRestApplication.class
+si\fri\kp\KpRest\api\rest\zrna\PodatkiZrno.class
+si\fri\kp\KpRest\api\rest\dtos\Avtor.class
+si\fri\kp\KpRest\api\rest\viri\AvtorjiVir.class
+META-INF\resources\java.lang.Object
+META-INF\services\javax.ws.rs.core.Application
+si\fri\kp\KpRest\api\rest\dtos\Vic.class
+si\fri\kp\KpRest\api\rest\dtos\MyContextResolver.class
+si\fri\kp\KpRest\api\rest\viri\ViciVir.class
+si\fri\kp\KpRest\api\rest\viri\AvtorjiVir$1.class
+si\fri\kp\KpRest\api\rest\viri\ViciVir$1.class

@@ -1,0 +1,8 @@
+{
+  "realm": "customers-realm",
+  "auth-server-url": "http://localhost:8082/auth/",
+  "ssl-required": "external",
+  "resource": "customers-api",
+  "public-client": true,
+  "confidential-port": 0
+}

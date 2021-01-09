@@ -1,0 +1,37 @@
+kumuluzee:
+  name: KpRest
+  version: 1.0.0
+  env:
+    name: dev
+  server:
+    http:
+      port: 8080
+      http2: true
+    https:
+      # enable HTTPS
+      enabled: true
+      # HTTPS port (default to 8443)
+      port: 8443
+      # enable HTTPS
+      http2: true
+      # absolute path of the keystore file that contains the server certificate/key (defaults to javax.net.ssl.keyStore
+      # system property value)
+      keystore-path: ./rest-keystore
+      # keystore password (defaults to javax.net.ssl.keyStorePassword system propery value)
+      keystore-password: Changed10!
+      # certificate/key alias
+      key-alias: rest-keystore
+      # certificate/key password
+      key-password: Changed10!
+      # comma separated list of supported SSL protocols
+      ssl-protocols: TLSv1.1,TLSv1.2
+      # comma separated list of supported SSL ciphers
+
+  security:
+    keycloak:
+      json: '{ "realm": "customers-realm",
+               "auth-server-url": "http://localhost:8082/auth/",
+               "ssl-required": "external",
+               "resource": "customers-api",
+               "public-client": true,
+               "confidential-port": 0 }'
