@@ -1,6 +1,6 @@
-docker -run -e KEYCLOAK_USER=admin -e KEYCLOAK_USER=Changed10! -p 8082:8080 jboss/keycloak
+docker run -e KEYCLOAK_USER=admin -e KEYCLOAK_USER=Changed10! -p 8082:8080 jboss/keycloak
 
-for loacl:Pickica2
+for esxi:Changed10!
 
 {
   "realm": "customers-realm",
@@ -11,6 +11,15 @@ for loacl:Pickica2
   "confidential-port": 0
 }
 
+
+{
+  "realm": "customers-realm",
+  "bearer-only": true,
+  "auth-server-url": "http://localhost:8082/auth/",
+  "ssl-required": "external",
+  "resource": "customers-api",
+  "confidential-port": 0
+}
 Navodila kako pognat Keycloak server https://github.com/kumuluz/kumuluzee-samples/tree/master/kumuluzee-security-cdi-keycloak
 
 keytool -genkey -v -keystore rest-keystore -alias rest-keystore -keyalg RSA -keysize 2048 -validity 10000
