@@ -1,6 +1,7 @@
 package si.fri.kp.KpRest.api.rest.viri;
 
 
+import com.kumuluz.ee.security.annotations.Secure;
 import si.fri.kp.KpRest.api.rest.dtos.Avtor;
 import si.fri.kp.KpRest.api.rest.dtos.Vic;
 import si.fri.kp.KpRest.api.rest.zrna.PodatkiZrno;
@@ -26,7 +27,7 @@ import java.util.logging.Logger;
 
 @Path("vici")
 @ApplicationScoped
-//@Secure
+@Secure
 public class ViciVir {
 
     Logger log = Logger.getLogger(ViciVir.class.getName());
@@ -41,7 +42,7 @@ public class ViciVir {
     @GET
     @Produces("application/json")
     @Path("/all")
-    //@RolesAllowed({"user","admin"})
+    @RolesAllowed({"user","admin"})
     public Response getJson(){
         //log.info("pošiljam json");
         return Response.ok(pz.getVici()).build();
@@ -51,7 +52,7 @@ public class ViciVir {
     @GET
     @Produces("application/xml")
     @Path("/all")
-    //@RolesAllowed({"user","admin"})
+    @RolesAllowed({"user","admin"})
     public Response getXml(){
         GenericEntity<List<Vic>> entity = new GenericEntity<List<Vic>>(pz.getVici()) {};
         //log.info("pošiljam xml");
@@ -61,7 +62,7 @@ public class ViciVir {
     @POST
     @Consumes({"application/json","application/xml"})
     @Produces({"application/json","application/xml"})
-    //@RolesAllowed({"admin","user"})
+    @RolesAllowed({"admin","user"})
     public Response postVic(Vic vic){
         Vic resp=pz.addVic(vic);
         if(resp==null){
@@ -74,7 +75,7 @@ public class ViciVir {
     @Consumes({"application/json","application/xml"})
     @Produces({"application/json","application/xml"})
     @Path("{idVica}")
-    //@RolesAllowed("admin")
+    @RolesAllowed("admin")
     public Response putVic(Vic vic,@PathParam("idVica")int id){
         Vic resp=pz.updateVic(vic,id);
         if(resp==null){
@@ -86,7 +87,7 @@ public class ViciVir {
     @DELETE
     @Produces({"application/json","application/xml"})
     @Path("{idVica}")
-    //@RolesAllowed("admin")
+    @RolesAllowed("admin")
     public Response deleteVic(@PathParam("idVica") int id){
         boolean uspeh=pz.deleteVic(id);
         if(!uspeh){

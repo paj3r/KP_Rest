@@ -27,7 +27,7 @@ public class AvtorjiVir {
     @GET
     @Produces("application/json")
     @Path("/all")
-    //@RolesAllowed({"admin","user"})
+    @RolesAllowed({"admin","user"})
     public Response getJson(){
         //log.info("pošiljam json");
         return Response.ok(pz.getAvtorji()).build();
@@ -36,7 +36,7 @@ public class AvtorjiVir {
     @GET
     @Produces("application/xml")
     @Path("/all")
-    //@RolesAllowed({"admin","user"})
+    @RolesAllowed({"admin","user"})
     public Response getXml(){
         GenericEntity<List<Avtor>> entity = new GenericEntity<List<Avtor>>(pz.getAvtorji()) {};
         //log.info("pošiljam xml");
@@ -57,7 +57,7 @@ public class AvtorjiVir {
     @POST
     @Consumes({"application/json","application/xml"})
     @Produces({"application/json","application/xml"})
-    //@RolesAllowed({"admin","user"})
+    @RolesAllowed({"admin","user"})
     public Response postAvtor(Avtor avtor){
         Avtor resp=pz.addAvtor(avtor);
         if(resp==null){
@@ -71,7 +71,7 @@ public class AvtorjiVir {
     @Consumes({"application/json","application/xml"})
     @Produces({"application/json","application/xml"})
     @Path("{idAvtorja}")
-    //@RolesAllowed({"admin","user"})
+    @RolesAllowed({"admin","user"})
     public Response putAvtor(Avtor avt,@PathParam("idAvtorja")int id){
         Avtor resp=pz.updateAvtor(avt,id);
         if(resp==null){
@@ -84,7 +84,7 @@ public class AvtorjiVir {
     @DELETE
     @Produces({"application/json","application/xml"})
     @Path("{idAvtorja}")
-    //@RolesAllowed("admin")
+    @RolesAllowed("admin")
     public Response deleteVic(@PathParam("idAvtorja") int id){
         boolean uspeh=pz.deleteAvtor(id);
         if(!uspeh){

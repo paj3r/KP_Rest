@@ -26,12 +26,13 @@ kumuluzee:
       # comma separated list of supported SSL protocols
       ssl-protocols: TLSv1.1,TLSv1.2
       # comma separated list of supported SSL ciphers
-
- # security:
-   # keycloak:
-    #  json: '{ "realm": "customers-realm",
-     #          "auth-server-url": "http://localhost:8082/auth/",
-      #         "ssl-required": "external",
-       #        "resource": "customers-api",
-        #       "public-client": true,
-         #      "confidential-port": 0 }'
+  security:
+    keycloak:
+      json: '{
+               "realm": "customers-realm",
+               "bearer-only": true,
+               "auth-server-url": "http://localhost:8082/auth/",
+               "ssl-required": "external",
+               "resource": "customers-api",
+               "confidential-port": 0
+             }'
