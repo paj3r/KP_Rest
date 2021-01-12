@@ -1,10 +1,10 @@
 package si.fri.kp.KpRest.api.rest;
 
-import javax.annotation.security.DeclareRoles;
+//import javax.annotation.security.DeclareRoles;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-@DeclareRoles({"user", "admin"})
+//@DeclareRoles({"user", "admin"})
 /*
 @Keycloak(json =
         "{"+
