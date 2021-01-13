@@ -44,6 +44,21 @@ public class AvtorjiVir {
     }
 
     @GET
+    @Produces("application/json")
+    @Path("/{idAvtorja}/vici")
+    public Response getAvtVicJs(@PathParam("idAvtorja")int id){
+        return Response.ok(pz.getVicFromAvtor(id)).build();
+    }
+
+    @GET
+    @Produces("application/xml")
+    @Path("/{idAvtorja}/vici")
+    public Response getAvtVicXML(@PathParam("idAvtorja")int id){
+        GenericEntity<List<Vic>> entity = new GenericEntity<List<Vic>>(pz.getVicFromAvtor(id)) {};
+        return Response.ok(entity).build();
+    }
+
+    @GET
     @Produces({"application/xml","application/json"})
     @Path("{idAvtorja}")
     public Response getavtId(@PathParam("idAvtorja")int id){

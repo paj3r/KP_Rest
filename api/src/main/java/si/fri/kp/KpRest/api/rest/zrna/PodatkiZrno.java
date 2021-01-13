@@ -122,4 +122,13 @@ public class PodatkiZrno {
         }
         return avtorji.get(id);
     }
+    public List<Vic> getVicFromAvtor(int id){
+        List<Vic> avtVic = new ArrayList<>();
+        for(int i=0;i<this.vici.size();i++){
+            if(this.vici.get(i).getAvtor().getId()==id){
+                avtVic.add(this.vici.get(i));
+            }
+        }
+        return avtVic;
+    }
 }
