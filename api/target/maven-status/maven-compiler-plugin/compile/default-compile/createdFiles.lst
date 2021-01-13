@@ -1,5 +1,6 @@
 si\fri\kp\KpRest\api\rest\KpRestApplication.class
 si\fri\kp\KpRest\api\rest\zrna\PodatkiZrno.class
+si\fri\kp\KpRest\api\rest\viri\AvtorjiVir$2.class
 si\fri\kp\KpRest\api\rest\dtos\Avtor.class
 si\fri\kp\KpRest\api\rest\dtos\MyContextResolver.class
 si\fri\kp\KpRest\api\rest\viri\AvtorjiVir.class
